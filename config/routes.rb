@@ -1,10 +1,33 @@
 Rails.application.routes.draw do
+  
+  resources :authors
+  resources :novels
+  resources :genres
 
-   resources :authors
-   resources :novels
-   resources :genres
+  get 'site/home'
 
-   root "authors#index"
+  get 'site/about'
+
+  get 'novels/index'
+
+  get 'novels/show'
+
+  get 'authors/index'
+
+  get 'authors/show'
+
+  get 'site/home'
+
+  get 'site/about'
+
+  get 'genres/index'
+
+  get 'genres/show'
+
+
+  get "about" => "site#about"
+
+  root "site#home"
 
 end
   # The priority is based upon order of creation: first created -> highest priority.
