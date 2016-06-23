@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
-  
+
   resources :authors
   resources :novels
   resources :genres
+
+  get "/search(.:format)" => "search#index", as: :search
 
   get 'site/home'
 

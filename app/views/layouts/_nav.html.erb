@@ -17,6 +17,13 @@
                <li><%= link_to "Novels", novels_path %></li>
                <li><%= link_to "Genres", genres_path %></li>
             </ul>
+
+            <%= form_tag search_path, method: :get, class: "navbar-form navbar-left", role: "search", id: "searchForm" do %>
+               <div class="form-group">
+                 <%= search_field_tag :search, params[:search], class: "form-control", placeholder: "Search articles..." %>
+               </div>
+            <% end %>
+            
             <ul class="nav navbar-nav navbar-right">
                <li><%= link_to "About", about_path %></li>
             </ul>
